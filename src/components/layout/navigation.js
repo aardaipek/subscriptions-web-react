@@ -1,19 +1,27 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { Navbar,Nav } from "react-bootstrap";
 
 function NavigationBar() {
-    return <header>
-        <div>Header</div>
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/login">Login</Link>
-                </li>
-                <li>
-                    <Link to="/todo">Todos</Link>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  return (
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand href="#">React App</Navbar.Brand>
+      <Navbar.Toggle aria-controls="navbarScroll" />
+      <Navbar.Collapse id="navbarScroll">
+        <Nav
+          className="mr-auto my-2 my-lg-0"
+          style={{ maxHeight: "100px" }}
+          navbarScroll
+        >
+          <Nav.Link>
+            <Link to="/todo">Todos</Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link to="/login">Login</Link>
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 }
 
 export default NavigationBar;
