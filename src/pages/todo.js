@@ -7,36 +7,47 @@ function TodoPage() {
   const [isloading, setIsLoading] = useState(true);
   const [loadedSubscriptions, setLoadedSubscriptions] = useState([]);
 
-  useEffect( async () => {
+  useEffect(async () => {
     setIsLoading(true);
     const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: 'DCarter' })
-  };
-    fetch("http://localhost:1337/api/subscription/get_all",requestOptions)
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username: "DCarter" }),
+    };
+    fetch("http://localhost:1337/api/subscription/get_all", requestOptions)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data)
+        console.log(data);
         setIsLoading(false);
-        setLoadedSubscriptions(data); 
+        setLoadedSubscriptions(data);
       });
   }, []);
 
   if (isloading) {
     return (
-      <section>
+      <Container fluid>
         <p>Loading..</p>
-      </section>
+      </Container>
     );
   }
 
   if (loadedSubscriptions && !isloading) {
-    return <SubscriptionList subscriptions={loadedSubscriptions }/>
-    
+    if (loadedSubscriptions.length > 0)
+      return (
+        <Container fluid>
+          <SubscriptionList subscriptions={loadedSubscriptions} />
+        </Container>
+      );
+    else
+      return (
+        <Container fluid>
+          <h2>Add new subscription</h2>
+        </Container>
+      );
   }
+
 }
 
 export default TodoPage;

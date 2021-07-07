@@ -1,5 +1,5 @@
-import { Link ,NavLink} from "react-router-dom";
-import { Navbar,Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
 
 function NavigationBar() {
   return (
@@ -12,15 +12,16 @@ function NavigationBar() {
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
-          <NavLink to="/todo">Todos</NavLink>
-            
-          <NavLink to="/login">
-          Login
-          </NavLink>
+          <NavLink to="/todo" style={navBarStyle}>Todos</NavLink>
+          <NavLink to="/login" style={navBarStyle}>Login</NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 }
+
+const navBarStyle = {
+  'padding':'5px'
+};
 
 export default NavigationBar;
