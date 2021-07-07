@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 import { Navbar,Nav } from "react-bootstrap";
 
 function NavigationBar() {
@@ -12,12 +12,11 @@ function NavigationBar() {
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
-          <Nav.Link>
-            <Link to="/todo">Todos</Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link to="/login">Login</Link>
-          </Nav.Link>
+          <NavLink to="/todo">Todos</NavLink>
+            
+          <NavLink to="/login">
+          Login
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

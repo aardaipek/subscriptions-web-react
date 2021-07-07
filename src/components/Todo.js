@@ -15,14 +15,14 @@ function Todo(props) {
         setModalIsOpen(false); 
     };
 
-return <div className='card'>
+return (<div className='card'>
     <h2>{props.text}</h2>
     <div className='actions'>
       <Button className='btn' variant="danger" onClick={deleteHandler}>Delete</Button>
     </div>
     {modalIsOpen && <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
     {modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
-  </div>
+  </div>)
 }
 
 export default Todo;
