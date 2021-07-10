@@ -1,26 +1,22 @@
-import { Form,Button } from 'react-bootstrap';
+import { Form, Button, Col } from "react-bootstrap";
 
 function FormCard() {
   return (
-    <Form>
+    <Form className="">
       <Form.Group controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label className="text-monospace">Email</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
       </Form.Group>
 
       <Form.Group controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label className="text-monospace">Password</Form.Label>
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
+      <Col className="text-center">
+        <Button className="" variant="primary" type="submit">
+          Try Login
+        </Button>
+      </Col>
     </Form>
   );
 }

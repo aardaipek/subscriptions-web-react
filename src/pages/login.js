@@ -7,9 +7,9 @@ function Login() {
       <Row>
         <Col></Col>
         <Col>
-          <Card style={{marginTop:15}}>
+          <Card style={cardStyle}>
             <Card.Body>
-              <Card.Title>Login Now!</Card.Title>
+              <Card.Title className="text-center text-primary">Login</Card.Title>
               <FormCard></FormCard>
             </Card.Body>
           </Card>
@@ -18,6 +18,11 @@ function Login() {
       </Row>
     </Container>
   );
+}
+
+const cardStyle= {
+  'marginTop':'15px',
+  "borderRadius":"40px"
 }
 
 export default Login;
