@@ -1,28 +1,58 @@
-import { useState } from 'react';
-import {Button} from 'react-bootstrap';
+import { useState } from "react";
+import { Button, ListGroup, Row, Col, Container } from "react-bootstrap";
 
-import Modal from './Modal';
-import Backdrop from './Backdrop';
+import TodoDetail from "./Todo.Detail";
 
 function Todo(props) {
-    const [modalIsOpen,setModalIsOpen ] = useState(false);
+  const [isDetailOpen, setOpenDetail] = useState(false);
+  const [itemClickCount, setClickCount] = useState(0);
 
-    function deleteHandler(){
-        setModalIsOpen(true); 
-    };
 
-    function closeModalHandler() {
-        setModalIsOpen(false); 
-    };
+  function openSubDetail() {
+    if(itemClickCount > 0){
+      setClickCount(0);
+      setOpenDetail(false)
+    }else{
+      setClickCount(1)
+      setOpenDetail(true);
+    }
+  }
 
-return (<div className='card'>
-    <h2>{props.text}</h2>
-    <div className='actions'>
-      <Button className='btn' variant="danger" onClick={deleteHandler}>Delete</Button>
+  return (
+    <div style={layoutStyle}>
+      <Container>
+        <Row>
+          <Col >
+            <ListGroup as="ul">
+              <ListGroup.Item
+                action
+                style={listItemStyle}
+                as="li"
+                onClick={openSubDetail}
+              >
+                {props.sub.title}
+              </ListGroup.Item>
+            </ListGroup>
+          </Col>
+          <Col md={8}>
+            {isDetailOpen ? (
+              <TodoDetail record={props.sub}></TodoDetail>
+            ) : (
+              <div></div>
+            )}
+          </Col>
+        </Row>
+      </Container>
     </div>
-    {modalIsOpen && <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler} />}
-    {modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
-  </div>)
+  );
 }
+
+const layoutStyle = {
+  marginTop: "10px",
+};
+const listStyle = {};
+const listItemStyle = {
+  cursor: "pointer",
+};
 
 export default Todo;

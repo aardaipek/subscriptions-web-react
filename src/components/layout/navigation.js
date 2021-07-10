@@ -12,7 +12,7 @@ function NavigationBar() {
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
-          <NavLink to="/todo" style={navBarStyle}>Todos</NavLink>
+          <NavLink to="/home" style={navBarStyle}>Subs</NavLink>
           <NavLink to="/login" style={navBarStyle}>Login</NavLink>
         </Nav>
       </Navbar.Collapse>

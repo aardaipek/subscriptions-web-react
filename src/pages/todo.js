@@ -18,10 +18,13 @@ function TodoPage() {
       .then((response) => {
         return response.json();
       })
-      .then((data) => {
-        console.log(data);
+      .then(
+        (data) => {
         setIsLoading(false);
         setLoadedSubscriptions(data);
+      }).catch((err) => {
+          setIsLoading(false);
+          setLoadedSubscriptions([]);
       });
   }, []);
 

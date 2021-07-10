@@ -9,7 +9,7 @@ function App() {
     <div>
       <NavigationBar></NavigationBar>
       <Switch>
-        <Route path="/todo">
+        <Route path="/home">
           <TodoPage></TodoPage>
         </Route>
         <Route path="/">
