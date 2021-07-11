@@ -1,6 +1,6 @@
 import { Button, ListGroup, Row, Col,Card, Container } from "react-bootstrap";
 
-function TodoDetail(props) {
+function SubscriptionDetail(props) {
   return (
     <Container>
       <Card>
@@ -17,4 +17,4 @@ function TodoDetail(props) {
   );
 }
 
-export default TodoDetail;
+export default SubscriptionDetail;

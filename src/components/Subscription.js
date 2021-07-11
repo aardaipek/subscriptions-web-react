@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Button, ListGroup, Row, Col, Container } from "react-bootstrap";
 
-import TodoDetail from "./Todo.Detail";
+import SubscriptionDetail from "./SubscriptionDetail";
 
-function Todo(props) {
+function Subscription(props) {
   const [isDetailOpen, setOpenDetail] = useState(false);
   const [itemClickCount, setClickCount] = useState(0);
 
@@ -22,7 +22,7 @@ function Todo(props) {
     <div style={layoutStyle}>
       <Container>
         <Row>
-          <Col >
+          <Col>
             <ListGroup as="ul">
               <ListGroup.Item
                 action
@@ -36,7 +36,7 @@ function Todo(props) {
           </Col>
           <Col md={8}>
             {isDetailOpen ? (
-              <TodoDetail record={props.sub}></TodoDetail>
+              <SubscriptionDetail record={props.sub}></SubscriptionDetail>
             ) : (
               <div></div>
             )}
@@ -55,4 +55,4 @@ const listItemStyle = {
   cursor: "pointer",
 };
 
-export default Todo;
+export default Subscription;

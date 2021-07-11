@@ -1,9 +1,8 @@
-import Todo from "../components/Todo";
 import SubscriptionList from "../components/SubscriptionList";
 import { Container } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-function TodoPage() {
+function SubscriptionsPage() {
   const [isloading, setIsLoading] = useState(true);
   const [loadedSubscriptions, setLoadedSubscriptions] = useState([]);
 
@@ -53,4 +52,4 @@ function TodoPage() {
 
 }
 
-export default TodoPage;
+export default SubscriptionsPage;

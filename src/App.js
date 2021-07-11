@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 
-import Login from "./pages/login";
-import TodoPage from "./pages/todo";
+import Login from "./pages/LoginPage";
+import SubscriptionsPage from "./pages/SubscriptionsPage";
 import NavigationBar from "./components/layout/navigation";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <NavigationBar></NavigationBar>
       <Switch>
         <Route path="/home">
-          <TodoPage></TodoPage>
+          <SubscriptionsPage></SubscriptionsPage>
         </Route>
         <Route path="/">
           <Login></Login>

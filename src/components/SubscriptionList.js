@@ -1,12 +1,12 @@
 import { Container } from "react-bootstrap";
-import Todo from "../components/Todo";
+import Subscription from "./Subscription";
 
 function SubscriptionList(props) {
   return (
     <Container fluid>
       <div>
         {props.subscriptions.map((sub, index) => {
-          return <Todo key={index} sub={sub} />;
+          return <Subscription key={index} sub={sub} />;
         })}
       </div>
     </Container>
