@@ -6,7 +6,7 @@ function SubscriptionList(props) {
     <Container fluid>
       <div>
         {props.subscriptions.map((sub, index) => {
-          return <Subscription key={index} sub={sub} />;
+          return <Subscription detail = {props.detail} key={index} sub={sub} />;
         })}
       </div>
     </Container>

@@ -1,6 +1,11 @@
 import { Form, Button, Col } from "react-bootstrap";
 
-function FormCard() {
+function FormCard(props) {
+
+  function tryLogin(){
+    props.login("true");
+  }
+
   return (
     <Form className="">
       <Form.Group controlId="formBasicEmail">
@@ -13,7 +18,7 @@ function FormCard() {
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
       <Col className="text-center">
-        <Button className="" variant="primary" type="submit">
+        <Button onClick={tryLogin} className="" variant="primary">
           Try Login
         </Button>
       </Col>

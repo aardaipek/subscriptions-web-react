@@ -1,10 +1,18 @@
 import SubscriptionList from "../components/SubscriptionList";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import SubscriptionDetail from "../components/SubscriptionDetail";
 
 function SubscriptionsPage() {
   const [isloading, setIsLoading] = useState(true);
   const [loadedSubscriptions, setLoadedSubscriptions] = useState([]);
+  const [title, setTitle] = useState({});
+  const [isDetailClicked, setDetailClicked] = useState(false);
+
+  const openDetail = (title) => {
+    setDetailClicked(true);
+    setTitle(title);
+  };
 
   useEffect(async () => {
     setIsLoading(true);
@@ -17,13 +25,13 @@ function SubscriptionsPage() {
       .then((response) => {
         return response.json();
       })
-      .then(
-        (data) => {
+      .then((data) => {
         setIsLoading(false);
         setLoadedSubscriptions(data);
-      }).catch((err) => {
-          setIsLoading(false);
-          setLoadedSubscriptions([]);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setLoadedSubscriptions([]);
       });
   }, []);
 
@@ -35,11 +43,46 @@ function SubscriptionsPage() {
     );
   }
 
-  if (loadedSubscriptions && !isloading) {
-    if (loadedSubscriptions.length > 0)
+  const offlineData = [
+    {
+      title: "Amazon Prime",
+      payCycle: "01.01.2001",
+      currency: "usd",
+      total: "9.99",
+      type: "movie,shopping",
+    },
+    {
+      title: "Netflix",
+      payCycle: "02.02.2001",
+      currency: "tl",
+      total: "19.99",
+      type: "movie",
+    },
+    {
+      title: "Spotify",
+      payCycle: "03.03.2010",
+      currency: "tl",
+      total: "29.99",
+      type: "music",
+    },
+  ];
+
+  if (offlineData && !isloading) {
+    if (offlineData.length > 0)
       return (
         <Container fluid>
-          <SubscriptionList subscriptions={loadedSubscriptions} />
+          <Row>
+            <Col md={3}></Col>
+            <Col md={3}>
+              <SubscriptionList subscriptions={offlineData} detail={openDetail} />
+            </Col>
+            <Col md={4}>
+              {isDetailClicked && (
+                <SubscriptionDetail record={title}></SubscriptionDetail>
+              )}
+            </Col>
+            <Col md={2}></Col>
+          </Row>
         </Container>
       );
     else
@@ -49,7 +92,6 @@ function SubscriptionsPage() {
         </Container>
       );
   }
-
 }
 
 export default SubscriptionsPage;

@@ -1,47 +1,24 @@
 import { useState } from "react";
 import { Button, ListGroup, Row, Col, Container } from "react-bootstrap";
 
-import SubscriptionDetail from "./SubscriptionDetail";
-
 function Subscription(props) {
-  const [isDetailOpen, setOpenDetail] = useState(false);
-  const [itemClickCount, setClickCount] = useState(0);
-
-
   function openSubDetail() {
-    if(itemClickCount > 0){
-      setClickCount(0);
-      setOpenDetail(false)
-    }else{
-      setClickCount(1)
-      setOpenDetail(true);
-    }
+    props.detail(props.sub);
   }
 
   return (
     <div style={layoutStyle}>
       <Container>
-        <Row>
-          <Col>
-            <ListGroup as="ul">
-              <ListGroup.Item
-                action
-                style={listItemStyle}
-                as="li"
-                onClick={openSubDetail}
-              >
-                {props.sub.title}
-              </ListGroup.Item>
-            </ListGroup>
-          </Col>
-          <Col md={8}>
-            {isDetailOpen ? (
-              <SubscriptionDetail record={props.sub}></SubscriptionDetail>
-            ) : (
-              <div></div>
-            )}
-          </Col>
-        </Row>
+        <ListGroup as="ul">
+          <ListGroup.Item
+            action
+            style={listItemStyle}
+            as="li"
+            onClick={openSubDetail}
+          >
+            {props.sub.title}
+          </ListGroup.Item>
+        </ListGroup>
       </Container>
     </div>
   );
