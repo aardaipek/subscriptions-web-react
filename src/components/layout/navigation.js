@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
+import NavbarBrandText from "../ui-components/navigation/headerText";
 
 function NavigationBar() {
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#">React App</Navbar.Brand>
+      <Navbar.Brand href="#">
+        <NavbarBrandText title="My Subs"></NavbarBrandText>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <div className="d-flex justify-content-space-between">

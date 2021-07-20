@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { Button, ListGroup, Row, Col, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import SubList from "../ui-components/common/SubList";
+import SubItem from "../ui-components/common/SubItem";
 
 function Subscription(props) {
+
   function openSubDetail() {
     props.detail(props.sub);
   }
@@ -9,16 +12,7 @@ function Subscription(props) {
   return (
     <div style={layoutStyle}>
       <Container>
-        <ListGroup as="ul">
-          <ListGroup.Item
-            action
-            style={listItemStyle}
-            as="li"
-            onClick={openSubDetail}
-          >
-            {props.sub.title}
-          </ListGroup.Item>
-        </ListGroup>
+        <SubList text={props.sub.title} clickEvent={openSubDetail}></SubList>
       </Container>
     </div>
   );

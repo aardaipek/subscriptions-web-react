@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import FormCard from "../components/Form";
 
@@ -17,7 +18,7 @@ function Login() {
         <Col></Col>
         <Col>
           <Card style={cardStyle}>
-            {!isLoggedIn && <span style={registerTextStyle} className="text-right text-primary">Register Here <span>➡️</span></span>}
+            {!isLoggedIn && <NavLink style={registerTextStyle} to="/register" className="text-right text-primary">Register Here <span>➡️</span></NavLink>}
             <Card.Body>
               <Card.Title className="text-center text-primary">Login</Card.Title>
               <FormCard login={tryLogin}></FormCard>

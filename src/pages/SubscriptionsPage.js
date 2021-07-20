@@ -1,7 +1,7 @@
-import SubscriptionList from "../components/SubscriptionList";
+import SubscriptionList from "../components/subscriptions/SubscriptionList";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import SubscriptionDetail from "../components/SubscriptionDetail";
+import SubscriptionDetail from "../components/subscriptions/SubscriptionDetail";
 
 function SubscriptionsPage() {
   const [isloading, setIsLoading] = useState(true);
@@ -70,7 +70,7 @@ function SubscriptionsPage() {
   if (offlineData && !isloading) {
     if (offlineData.length > 0)
       return (
-        <Container fluid>
+        <Container>
           <Row>
             <Col md={3}></Col>
             <Col md={3}>

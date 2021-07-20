@@ -2,6 +2,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Login from "./pages/LoginPage";
 import SubscriptionsPage from "./pages/SubscriptionsPage";
+import RegisterPage from "./pages/RegisterPage";
 import NavigationBar from "./components/layout/navigation";
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
         </Route>
         <Route path="/">
           <Login></Login>
+        </Route>
+        <Route path="/register">
+          <RegisterPage></RegisterPage>
         </Route>
       </Switch>
     </div>
