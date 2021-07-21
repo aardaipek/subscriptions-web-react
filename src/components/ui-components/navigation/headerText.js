@@ -6,7 +6,7 @@ const NavbarBrandText = ({ title, color }) => {
 };
 
 const Headline = styled.h3`
-  color: ${(props) => props.color || primaryTheme}; ;
+  color: ${(props) => props.color || primaryTheme};
 `;
 
 export default NavbarBrandText;

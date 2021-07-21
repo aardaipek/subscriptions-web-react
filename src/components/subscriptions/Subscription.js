@@ -21,9 +21,5 @@ function Subscription(props) {
 const layoutStyle = {
   marginTop: "10px",
 };
-const listStyle = {};
-const listItemStyle = {
-  cursor: "pointer",
-};
 
 export default Subscription;
