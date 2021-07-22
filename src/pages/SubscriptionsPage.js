@@ -51,6 +51,9 @@ function SubscriptionsPage() {
       currency: "usd",
       total: "9.99",
       type: "movie,shopping",
+      systemCode :"amazon_prime",
+      yearly:false,
+      color:'#146eb4'
     },
     {
       title: "Netflix",
@@ -58,6 +61,9 @@ function SubscriptionsPage() {
       currency: "tl",
       total: "19.99",
       type: "movie",
+      systemCode:"netflix",
+      yearly:false,
+      color:'#e50914'
     },
     {
       title: "Spotify",
@@ -65,6 +71,53 @@ function SubscriptionsPage() {
       currency: "tl",
       total: "29.99",
       type: "music",
+      systemCode : "spotify",
+      yearly:false,
+      color:'#1db954'
+    },
+    {
+      title: "Storytel",
+      payCycle: "04.03.2011",
+      currency: "tl",
+      total: "39.99",
+      type: "book,entertainment",
+      systemCode : "storytel",
+      yearly:false,
+      color:'#f97200'
+
+    },
+    {
+      title: "Apple Music",
+      payCycle: "05.03.2020",
+      currency: "tl",
+      total: "9.99",
+      type: "music",
+      systemCode : "apple_music",
+      yearly:false,
+      color:'#ff0e83'
+
+    },
+    {
+      title: "Youtube Premium",
+      payCycle: "05.03.2020",
+      currency: "tl",
+      total: "9.99",
+      type: "video,entertainment",
+      systemCode : "youtube_premium",
+      yearly:false,
+      color:'#ff0000'
+
+    },
+    {
+      title: "Duolingo",
+      payCycle: "07.03.2021",
+      currency: "tl",
+      total: "109.99",
+      type: "learning,language",
+      systemCode : "duolingo",
+      yearly:true,
+      color:'#7ac70c'
+
     },
   ];
 

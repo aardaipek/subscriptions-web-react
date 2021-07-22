@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
-import SubList from "../ui-components/common/SubList";
-import SubItem from "../ui-components/common/SubItem";
+import SubList from "../ui-components/subscriptions/SubList";
+import SubItem from "../ui-components/subscriptions/SubItem";
 
 function Subscription(props) {
 
@@ -10,9 +10,9 @@ function Subscription(props) {
   }
 
   return (
-    <div >
+    <div>
       <Container>
-        <SubList text={props.sub.title} clickEvent={openSubDetail}></SubList>
+        <SubList text={props.sub.title} color={props.sub.color} clickEvent={openSubDetail}></SubList>
       </Container>
     </div>
   );
