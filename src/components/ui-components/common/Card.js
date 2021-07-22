@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 import CardContainer from "../card/CardContainer";
-import CustomButton from "./Button";
+import Button from "./Button";
 import Heading from "./Heading";
 import Input from "./Input";
 import Link from "./Link";
@@ -26,7 +26,7 @@ const SignUpCard = () => (
       </CardFieldWrapper>
 
       <CardFieldWrapper>
-        <CustomButton text="Sign Up" type="button"></CustomButton>
+        <Button text="Sign Up" type="button"></Button>
       </CardFieldWrapper>
 
       <CardFieldWrapper>

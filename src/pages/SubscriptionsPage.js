@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import SubscriptionDetail from "../components/subscriptions/SubscriptionDetail";
 
+
 function SubscriptionsPage() {
   const [isloading, setIsLoading] = useState(true);
   const [loadedSubscriptions, setLoadedSubscriptions] = useState([]);

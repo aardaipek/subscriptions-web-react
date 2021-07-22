@@ -1,4 +1,5 @@
-import { Button, ListGroup, Row, Col,Card, Container } from "react-bootstrap";
+import {ListGroup, Row, Col,Card, Container } from "react-bootstrap";
+import Button from "../ui-components/common/Button";
 
 function SubscriptionDetail(props) {
 
@@ -11,7 +12,7 @@ function SubscriptionDetail(props) {
           <Card.Text>{props.record.type}</Card.Text>
           <Card.Text>{props.record.currency == "usd" ? '💲' : "tl"}</Card.Text>
           <Card.Text>{props.record.total}</Card.Text>
-          <Button variant="info">Update</Button>
+          <Button bg="tertiary" bold="none" color="light" text="Update"></Button>
         </Card.Body>
       </Card>
     </Container>

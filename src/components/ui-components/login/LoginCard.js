@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import CustomButton from "../common/Button";
+import Button from "../common/Button";
 import Heading from "../common/Heading";
 import Input from "../common/Input";
 import Link from "../common/Link";
@@ -28,7 +28,7 @@ const SignInCard = () => {
         </CardFieldWrapper>
 
         <CardFieldWrapper>
-          <CustomButton text="Log In" type="button"></CustomButton>
+          <Button bg="primary" bold="bold" shape="round" color="light" text="Log In" type="button"></Button>
         </CardFieldWrapper>
 
         <CardFieldWrapper>
