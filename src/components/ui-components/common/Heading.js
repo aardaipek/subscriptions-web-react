@@ -6,7 +6,9 @@ const Heading = ({ text, color,fontSize }) => {
   return <CardHeading color={color} fontSize={fontSize}>{text}</CardHeading>;
 };
 
-const CardHeading = styled.h1`
+
+
+const CardHeading = styled.p`
   color: ${p => p.color || primaryTheme};
   font-size: ${p => p.fontSize || headingFontSize};
   font-weight: bold;

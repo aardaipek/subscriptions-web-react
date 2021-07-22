@@ -1,20 +1,20 @@
 import { Route, Switch } from "react-router-dom";
 
-import Login from "./pages/LoginPage";
+import LoginPage from "./pages/LoginPage";
 import SubscriptionsPage from "./pages/SubscriptionsPage";
 import RegisterPage from "./pages/RegisterPage";
-import NavigationBar from "./components/layout/navigation";
+import Navbar from '../src/components/ui-components/navigation/Navbar'
 
 function App() {
   return (
     <div>
-      <NavigationBar></NavigationBar>
+      <Navbar></Navbar>
       <Switch>
         <Route path="/home">
           <SubscriptionsPage></SubscriptionsPage>
         </Route>
-        <Route path="/">
-          <Login></Login>
+        <Route path="/login">
+          <LoginPage></LoginPage>
         </Route>
         <Route path="/register">
           <RegisterPage></RegisterPage>

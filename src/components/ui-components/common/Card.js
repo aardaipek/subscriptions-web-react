@@ -1,36 +1,37 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import CardContainer from "../card/CardContainer";
 import CustomButton from "./Button";
 import Heading from "./Heading";
 import Input from "./Input";
 import Link from "./Link";
 
-const CustomCard = () => (
+const SignUpCard = () => (
   <CardWrapper>
     <CardHeaderWrapper>
       <Heading text="Sign Up"></Heading>
     </CardHeaderWrapper>
     <CardBody>
-      <CardFieldset>
+      <CardFieldWrapper>
         <Input type="text" placeholder="Username"></Input>
-      </CardFieldset>
+      </CardFieldWrapper>
 
-      <CardFieldset>
+      <CardFieldWrapper>
         <Input type="text" placeholder="E-Mail"></Input>
-      </CardFieldset>
+      </CardFieldWrapper>
 
-      <CardFieldset>
+      <CardFieldWrapper>
         <Input type="password" placeholder="Password"></Input>
-      </CardFieldset>
+      </CardFieldWrapper>
 
-      <CardFieldset>
+      <CardFieldWrapper>
         <CustomButton text="Sign Up" type="button"></CustomButton>
-      </CardFieldset>
+      </CardFieldWrapper>
 
-      <CardFieldset>
+      <CardFieldWrapper>
         <Link text="I have already an account"></Link>
-      </CardFieldset>
+      </CardFieldWrapper>
     </CardBody>
   </CardWrapper>
 );
@@ -42,7 +43,7 @@ const CardWrapper = styled.div`
   width: 300px;
   font-family: Quicksand, arial, sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
-  border-radius: 5px;
+  border-radius: 15px;
 `;
 
 const CardHeaderWrapper = styled.header`
@@ -55,7 +56,7 @@ const CardBody = styled.div`
   padding-left: 32px;
 `;
 
-const CardFieldset = styled.fieldset`
+const CardFieldWrapper = styled.fieldset`
   position: relative;
   padding: 0;
   margin: 0;
@@ -74,4 +75,4 @@ const CardFieldset = styled.fieldset`
   }
 `;
 
-export default CustomCard;
+export default SignUpCard;

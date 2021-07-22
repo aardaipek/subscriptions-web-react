@@ -19,7 +19,7 @@ function SubscriptionDetail(props) {
 }
 
 const layoutStyle = {
-  marginTop: "10px",
+  marginTop: "48px",
 };
 const cardStyle= {
   borderRadius: "10px"

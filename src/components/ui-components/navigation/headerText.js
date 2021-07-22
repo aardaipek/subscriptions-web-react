@@ -1,12 +1,16 @@
 import styled from "styled-components";
-import { primaryTheme } from "../ConstantStyles";
+import { fontFamily, brandFontSize, primaryTheme } from "../ConstantStyles";
 
 const NavbarBrandText = ({ title, color }) => {
   return <Headline color={color}>{title}</Headline>;
 };
 
-const Headline = styled.h3`
-  color: ${(props) => props.color || primaryTheme};
+const Headline = styled.p`
+  color: ${primaryTheme};
+  font-family: ${fontFamily}
+  font-size: ${brandFontSize};
+  font-weight: bold;
+
 `;
 
 export default NavbarBrandText;

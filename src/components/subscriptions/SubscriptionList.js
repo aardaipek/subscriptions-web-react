@@ -3,7 +3,7 @@ import Subscription from "./Subscription";
 
 function SubscriptionList(props) {
   return (
-    <Container fluid>
+    <Container fluid style={layoutStyle}>
       <div>
         {props.subscriptions.map((sub, index) => {
           return <Subscription detail = {props.detail} key={index} sub={sub} />;
@@ -11,6 +11,10 @@ function SubscriptionList(props) {
       </div>
     </Container>
   );
+}
+
+const layoutStyle = {
+  marginTop:'48px'
 }
 
 export default SubscriptionList;

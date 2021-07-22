@@ -10,7 +10,7 @@ function Subscription(props) {
   }
 
   return (
-    <div style={layoutStyle}>
+    <div >
       <Container>
         <SubList text={props.sub.title} clickEvent={openSubDetail}></SubList>
       </Container>
@@ -18,8 +18,6 @@ function Subscription(props) {
   );
 }
 
-const layoutStyle = {
-  marginTop: "10px",
-};
+
 
 export default Subscription;
