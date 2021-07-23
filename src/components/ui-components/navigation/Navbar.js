@@ -37,7 +37,7 @@ const Navbar = (props,{setTheme}) => {
         <NavBtn>
           <NavBtnLink to="/login">Sign In</NavBtnLink>
           <NavIcon onClick={changeTheme} >
-            {theme == 'dark' ? <FiSun></FiSun> : <FiMoon></FiMoon> }
+            {theme == 'light' ? <FiSun></FiSun> : <FiMoon></FiMoon> }
           </NavIcon>
         </NavBtn>
       </Nav>
