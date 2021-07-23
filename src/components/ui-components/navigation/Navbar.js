@@ -14,14 +14,14 @@ import { useDarkMode } from "../../dark-mode/UseDarkMode";
 import { lightTheme,darkTheme } from "../../dark-mode/Theme";
 
 const Navbar = (props,{setTheme}) => {
-  const [theme, themeToggler] = useDarkMode();
+  const [theme, themeToggler,mountedComponent] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   const changeTheme = (setTheme) => {
     themeToggler(setTheme);
     props.setTheme(theme)
   }
-
+  if(!mountedComponent) return <div/>
   return (
     <>
       <Nav>

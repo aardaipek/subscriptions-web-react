@@ -2,6 +2,7 @@ import SubscriptionList from "../components/subscriptions/SubscriptionList";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import SubscriptionDetail from "../components/subscriptions/SubscriptionDetail";
+import SkeletonCard from '../components/skeleton-loading/SkeletonCard';
 
 
 function SubscriptionsPage() {
@@ -14,6 +15,7 @@ function SubscriptionsPage() {
     setDetailClicked(true);
     setTitle(title);
   };
+  
 
   useEffect(async () => {
     setIsLoading(true);
@@ -38,9 +40,7 @@ function SubscriptionsPage() {
 
   if (isloading) {
     return (
-      <Container fluid>
-        <p>Loading..</p>
-      </Container>
+      <SkeletonCard></SkeletonCard>
     );
   }
 
