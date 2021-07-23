@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 //Components
 import LoginPage from "./pages/LoginPage";
@@ -11,17 +11,14 @@ import { GlobalStyles } from "./components/dark-mode/Global-Styles";
 import { darkTheme, lightTheme } from "./components/dark-mode/Theme";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState('light');
 
-  const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-  };
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={themeMode}>
       <GlobalStyles/>
-      <button onClick={themeToggler}>Switch Theme</button>
-      <Navbar></Navbar>
+      <Navbar setTheme={setTheme}></Navbar>
       <Switch>
         <Route path="/home">
           <SubscriptionsPage></SubscriptionsPage>

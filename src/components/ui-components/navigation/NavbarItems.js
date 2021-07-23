@@ -61,6 +61,23 @@ export const NavBtn = styled.nav`
     display: none;
   }
 `;
+
+export const NavIcon = styled.button`
+  border-radius: ${buttonBorderRadius};
+  background: #fff;
+  padding: 6px 12px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  margin-left:10px;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: ${primaryTheme};
+    color: #fff;
+  }
+`;
   
 export const NavBtnLink = styled(Link)`
   border-radius: ${buttonBorderRadius};
