@@ -4,7 +4,6 @@ const SubItem = ({ text, clickEvent, color }) => {
   return (
     <ListItem onClick={clickEvent}>
       <ColorDot color={color}>
-      
       </ColorDot>
       {text}
     </ListItem>
@@ -12,7 +11,6 @@ const SubItem = ({ text, clickEvent, color }) => {
 };
 
 const ListItem = styled.li`
-  background: #ffffff;
   display: flex;
   flex-direction: row;
   align-items:center;

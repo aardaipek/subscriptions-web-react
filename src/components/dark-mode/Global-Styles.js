@@ -1,5 +1,5 @@
 import { createGlobalStyle} from "styled-components";
-import { fontFamily } from "../ui-components/ConstantStyles";
+import { fontFamily,inputBorderRadius } from "../ui-components/ConstantStyles";
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -8,4 +8,19 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${fontFamily};
     transition: all 0.50s linear;
   }
-  `
+  input {
+    background: ${({ theme }) => theme.input};
+    border-radius:${inputBorderRadius}
+  }
+  ::placeholder{
+    color:${({ theme }) => theme.placeholder};
+    padding-left: 10px;
+  }
+  a{
+    color :${({ theme }) => theme.text};
+  }
+  input:valid{
+   color : ${({ theme }) => theme.placeholder};
+   padding-left: 10px;
+  }
+  `;
